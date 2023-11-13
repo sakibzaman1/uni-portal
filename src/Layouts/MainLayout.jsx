@@ -7,7 +7,7 @@ import NavBar from "../Components/Navbar/Navbar";
 const MainLayout = () => {
   return (
     <div className="max-w-7xl">
-      <section className="mb-10">
+      <section className="">
         <NavBar></NavBar>
       </section>
       <section>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Card,
   CardHeader,
@@ -9,12 +9,20 @@ import {
   Checkbox,
   Button,
 } from "@material-tailwind/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Login = () => {
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="flex justify-between items-center">
       <div className="w-1/2">
-        <Card className="w-96 my-20">
+        <Card className="w-96 my-20"  data-aos="zoom-in" data-aos-duration="1000">
           <CardHeader
             variant="gradient"
             color="gray"
@@ -51,7 +59,7 @@ const Login = () => {
           </CardFooter>
         </Card>
       </div>
-      <div className="w-1/2">
+      <div className="w-1/2" data-aos="fade-left" data-aos-duration="1000">
         
         <h1 className="text-4xl mb-10">Welcome to the University of Global Village</h1>
         <p className="text-base">

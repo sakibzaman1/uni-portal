@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   MobileNav,
@@ -28,6 +28,8 @@ import {
   CodeBracketIcon,
 } from "@heroicons/react/24/solid";
 import { Link, NavLink } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 // profile menu component
 const profileMenuItems = [
@@ -86,7 +88,7 @@ function ProfileMenu() {
           />
         </Button>
       </MenuHandler>
-      <MenuList className="p-1">
+      <MenuList className="px-4">
         {profileMenuItems.map(({ label, link, icon }, key) => {
           const isLastItem = key === profileMenuItems.length - 1;
           return (
@@ -212,14 +214,17 @@ const navListItems = [
   {
     label: "About",
     icon: UserCircleIcon,
+    link: "/about",
   },
   {
     label: "Contact",
     icon: CubeTransparentIcon,
+    link: "/contact",
   },
   {
     label: "Gallery",
     icon: CodeBracketSquareIcon,
+    link: "/gallery",
   },
 ];
 
@@ -251,6 +256,12 @@ function NavList() {
 }
 
 const NavBar = () => {
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   const [isNavOpen, setIsNavOpen] = React.useState(false);
 
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
@@ -263,8 +274,8 @@ const NavBar = () => {
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-7xl p-2 lg:rounded-none lg:pl-6 bg-transparent shadow-xl">
-      <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
+    <Navbar className=" mx-auto max-w-7xl p-2 lg:rounded-none bg-transparent shadow-xl"   data-aos="fade-down" data-aos-duration="1000">
+      <div className=" mx-auto flex items-center justify-center text-blue-gray-900">
         <Typography
           as="a"
           href="#"

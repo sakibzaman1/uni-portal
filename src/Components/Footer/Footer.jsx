@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Typography } from "@material-tailwind/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
  
 const LINKS = [
   {
@@ -19,8 +21,14 @@ const LINKS = [
 const currentYear = new Date().getFullYear();
 
 const Footer = () => {
+
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
     return (
-        <div>
+        <div data-aos="fade-up" data-aos-duration="1000">
             <footer className="relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
