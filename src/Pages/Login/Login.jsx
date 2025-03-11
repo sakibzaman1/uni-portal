@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import ugvLogo from "../../assets/Images/ugv_logo.png";
+
 import {
   Card,
   CardHeader,
@@ -20,7 +22,7 @@ const Login = () => {
   }, []);
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center px-96 min-h-screen">
       <div className="w-1/2">
         <Card className="w-96 my-20"  data-aos="zoom-in" data-aos-duration="1000">
           <CardHeader
@@ -59,9 +61,9 @@ const Login = () => {
           </CardFooter>
         </Card>
       </div>
-      <div className="w-1/2" data-aos="fade-left" data-aos-duration="1000">
-        
-        <h1 className="text-4xl mb-10">Welcome to the University of Global Village</h1>
+      <div className="w-1/2 flex flex-col items-center text-center" data-aos="fade-left" data-aos-duration="1000">
+      <img className="mb-10" src={ugvLogo} alt="" srcset="" />
+        <h1 className="text-4xl mb-10 ">Welcome to the University of Global Village</h1>
         <p className="text-base">
           Connecting Minds from Every Corner of the Globe. 🌍 Please enter your
           credentials to explore boundless opportunities in education and

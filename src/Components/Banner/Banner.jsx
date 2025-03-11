@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import BannerVideo from "../../assets/Videos/Banner.mp4";
+import BannerVideo from "../../assets/Videos/graduation_banner.mp4";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -12,7 +12,7 @@ const Banner = () => {
 
 
   return (
-    <div className="relative mt-10" style={{ position: "relative" }}>
+    <div className="relative mt-0" style={{ position: "relative" }}>
       <div className="video-container" style={{ position: "relative" }}   data-aos="zoom-out" data-aos-duration="1000">
         <video
           className="h-full w-full"
@@ -27,7 +27,7 @@ const Banner = () => {
         <div
           className="absolute top-0 left-0 w-full h-full"
           style={{
-            background: "rgba(0, 0, 0, 0.5)",
+            background: "rgba(0, 0, 0, 0)",
             color: "white",
             display: "flex",
             alignItems: "center",
@@ -37,7 +37,7 @@ const Banner = () => {
           }}
         >
           <div className="space-y-10"   data-aos="zoom-in" data-aos-duration="1000">
-            <h1 className="font-Montserrat text-5xl">
+            <h1 className="font-Montserrat text-7xl">
               Welcome To University of Global Village
             </h1>
             <p className="font-sans text-xl">

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import ugvWideLogo from "../../assets/Images/ugv_wide_logo.png"
 import {
   Navbar,
   MobileNav,
@@ -126,19 +127,19 @@ function ProfileMenu() {
 // nav list menu
 const navListMenuItems = [
   {
-    title: "@material-tailwind/html",
+    title: "VISION",
     description:
-      "Learn how to use @material-tailwind/html, packed with rich components and widgets.",
+      "The vision of University of Global Village (UGV) is to flourish as a prestigious  seat of learning in the world. As a center of excellence, it aims at attracting scholars from all around the world and to create a dynamic environment for learning,  research and innovation.",
   },
   {
-    title: "@material-tailwind/react",
+    title: "MISSION",
     description:
-      "Learn how to use @material-tailwind/react, packed with rich components for React.",
+      "The mission of University of Global Village (UGV) is to foster the national development process through the creation of a centre of excellence in higher education that   is responsive to society’s needs, and able to develop creative leaders.",
   },
   {
-    title: "Material Tailwind PRO",
+    title: "GOAL",
     description:
-      "A complete set of UI Elements for building faster websites in less time.",
+      "The goal of the University is to provide an excellent broad-based education with a focus on professional development for students to prepare them with the knowledge and skills necessary for leading the country.",
   },
 ];
 
@@ -165,7 +166,7 @@ function NavListMenu() {
           <Typography as="a" href="#" variant="small" className="font-normal">
             <MenuItem className="hidden items-center gap-2 font-medium text-blue-gray-900 lg:flex lg:rounded-full">
               <Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
-              Pages{" "}
+              UGV{" "}
               <ChevronDownIcon
                 strokeWidth={2}
                 className={`h-3 w-3 transition-transform ${
@@ -195,7 +196,7 @@ function NavListMenu() {
       </Menu>
       <MenuItem className="flex items-center gap-2 font-medium text-blue-gray-900 lg:hidden">
         <Square3Stack3DIcon className="h-[18px] w-[18px] text-blue-gray-500" />{" "}
-        Pages{" "}
+        UGV{" "}
       </MenuItem>
       <ul className="ml-6 flex w-full flex-col gap-1 lg:hidden">
         {renderItems}
@@ -225,6 +226,11 @@ const navListItems = [
     label: "Gallery",
     icon: CodeBracketSquareIcon,
     link: "/gallery",
+  },
+  {
+    label: "Academic Info",
+    icon: CodeBracketSquareIcon,
+    link: "/academicInfo",
   },
 ];
 
@@ -274,7 +280,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <Navbar className=" mx-auto max-w-7xl p-2 lg:rounded-none bg-transparent shadow-xl"   data-aos="fade-down" data-aos-duration="1000">
+    <Navbar className=" mx-auto max-w-9xl p-2 lg:rounded-none bg-transparent shadow-xl"   data-aos="fade-down" data-aos-duration="1000">
       <div className=" mx-auto flex items-center justify-center text-blue-gray-900">
         <Typography
           as="a"
@@ -300,17 +306,22 @@ const NavBar = () => {
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
 
-        <div className="ml-20">
+        <div className="ml-20 flex items-center gap-24">
+          <div>
           <Link to="/login">
-            <Button size="sm" variant="text">
-              <span>Log In</span>
+            <Button size="lg" variant="text">
+              <span className="font-Montserrat">Log In</span>
             </Button>
           </Link>
           <Link to="/registration">
-            <Button size="sm" variant="text">
-              <span>Registration</span>
+            <Button size="lg" variant="text">
+              <span className="font-Montserrat">Registration</span>
             </Button>
           </Link>
+          </div>
+          <div>
+            <img className="h-10" src={ugvWideLogo} alt="" />
+          </div>
         </div>
         <ProfileMenu />
       </div>

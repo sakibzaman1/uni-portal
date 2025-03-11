@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Typography } from "@material-tailwind/react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ugvLogo from "../../assets/Images/ugv_logo.png";
  
 const LINKS = [
   {
@@ -32,9 +33,14 @@ const Footer = () => {
             <footer className="relative w-full">
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-          <Typography variant="h5" className="mb-6">
+          <div>
+          {/* <Typography variant="h5" className="mb-6">
           University of Global Village
-          </Typography>
+          </Typography> */}
+          <div className=''>
+            <img className='h-48' src={ugvLogo} alt="" />
+          </div>
+          </div>
           <div className="grid grid-cols-3 justify-between gap-4">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>
